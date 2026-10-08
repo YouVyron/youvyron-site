@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YouVyron — سياسة الخصوصية | Privacy Policy</title>
+<meta name="description" content="سياسة خصوصية لوحة مفاتيح يوفيرون - شفافية كاملة لحماية أمنك وبياناتك">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 48"><path d="M6 40 L3 14 L17 25 L32 6 L47 25 L61 14 L58 40 Z" fill="%23FACC15"/><rect x="6" y="40" width="52" height="6" rx="3" fill="%23D4AF37"/></svg>'>
+<style>
+  :root {
+    --deep: #1b0f38;
+    --deeper: #120a26;
+    --purple: #5B21B6;
+    --violet: #7C3AED;
+    --blue: #00A3FF;
+    --gold: #D4AF37;
+    --gold-bright: #FACC15;
+    --text: #EDE9FE;
+    --muted: #a89fc7;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Cairo', 'Outfit', sans-serif;
+    background: radial-gradient(1200px 800px at 70% -10%, #3b1d7a 0%, transparent 55%),
+                radial-gradient(900px 700px at 10% 110%, #0b3a5e 0%, transparent 50%),
+                linear-gradient(180deg, var(--deep) 0%, var(--deeper) 100%);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ===== Floating orbs background ===== */
+  .orb {
+    position: fixed; border-radius: 50%; filter: blur(90px); opacity: .25;
+    pointer-events: none; z-index: 0;
+    animation: drift 18s ease-in-out infinite alternate;
+  }
+  .orb.o1 { width: 420px; height: 420px; background: var(--violet); top: -120px; right: -100px; }
+  .orb.o2 { width: 360px; height: 360px; background: var(--blue); bottom: -140px; left: -120px; animation-delay: -6s; }
+  .orb.o3 { width: 220px; height: 220px; background: var(--gold); top: 55%; right: 12%; opacity: .08; animation-delay: -12s; }
+  @keyframes drift {
+    from { transform: translate(0, 0) scale(1); }
+    to   { transform: translate(40px, 30px) scale(1.15); }
+  }
+
+  /* ===== Sparkles ===== */
+  .spark {
+    position: fixed; width: 6px; height: 6px; z-index: 0; pointer-events: none;
+    background: var(--gold-bright);
+    clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%);
+    animation: twinkle 3.6s ease-in-out infinite;
+    opacity: 0;
+  }
+  @keyframes twinkle {
+    0%, 100% { opacity: 0; transform: scale(.4) rotate(0deg); }
+    50%      { opacity: .7; transform: scale(1.2) rotate(45deg); }
+  }
+
+  /* ===== Navbar ===== */
+  header.nav-header {
+    position: relative; z-index: 10;
+    width: 100%; max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(168, 159, 199, 0.12);
+  }
+  .logo-link {
+    display: flex; align-items: center; gap: 12px;
+    text-decoration: none; color: white;
+  }
+  .crown-mini-logo {
+    width: 48px; height: auto;
+    filter: drop-shadow(0 0 8px rgba(250, 204, 21, .3));
+  }
+  .brand-name {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800; font-size: 24px;
+    background: linear-gradient(92deg, #fff 40%, var(--muted) 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  
+  /* Language Switcher Button */
+  .lang-switcher {
+    background: rgba(124, 58, 237, 0.15);
+    border: 1px solid rgba(167, 139, 250, 0.4);
+    border-radius: 20px;
+    padding: 2px;
+    display: inline-flex;
+    backdrop-filter: blur(8px);
+  }
+  .lang-btn {
+    padding: 6px 16px;
+    border-radius: 18px;
+    border: none;
+    font-family: 'Cairo', sans-serif;
+    font-size: 14px; font-weight: 700;
+    cursor: pointer;
+    background: transparent;
+    color: var(--muted);
+    transition: all 0.3s ease;
+  }
+  .lang-btn.active {
+    background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold) 100%);
+    color: #1b0f38;
+    box-shadow: 0 4px 12px rgba(250, 204, 21, 0.25);
+  }
+
+  /* ===== Container ===== */
+  main.content-container {
+    position: relative; z-index: 1;
+    width: 100%; max-width: 900px;
+    margin: 40px auto;
+    padding: 0 24px;
+    flex: 1;
+  }
+
+  /* Glassmorphism Privacy Card */
+  .privacy-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  }
+
+  .title-area {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  .title-area h1 {
+    font-size: clamp(28px, 4vw, 38px);
+    font-weight: 900;
+    margin-bottom: 8px;
+  }
+  .title-area .subtitle {
+    font-size: 16px;
+    color: var(--muted);
+  }
+
+  .intro-text {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text);
+    margin-bottom: 36px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(168, 159, 199, 0.15);
+  }
+
+  /* Privacy Sections */
+  .section-group-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--gold-bright);
+    margin: 28px 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 2px solid rgba(250, 204, 21, 0.2);
+    padding-bottom: 6px;
+  }
+
+  .policy-section {
+    background: rgba(124, 58, 237, 0.05);
+    border: 1px solid rgba(167, 139, 250, 0.1);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+  .policy-section:hover {
+    transform: translateY(-2px);
+    border-color: rgba(167, 139, 250, 0.25);
+  }
+  .section-title {
+    font-size: 17px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-body {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--muted);
+  }
+
+  /* Data Table */
+  .data-table-wrapper {
+    overflow-x: auto;
+    margin-top: 12px;
+  }
+  table.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+    font-size: 14px;
+    text-align: right;
+  }
+  table.data-table th, table.data-table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid rgba(168, 159, 199, 0.15);
+  }
+  table.data-table th {
+    color: white;
+    font-weight: 700;
+    background: rgba(124, 58, 237, 0.15);
+  }
+  table.data-table td {
+    color: var(--muted);
+  }
+
+  /* ===== Footer ===== */
+  footer {
+    position: relative; z-index: 1;
+    text-align: center;
+    padding: 26px 16px;
+    font-size: 13px;
+    color: var(--muted);
+    border-top: 1px solid rgba(168, 159, 199, .12);
+  }
+  footer .crown-mini { color: var(--gold-bright); }
+
+  /* ===== Translation Switch Logic Class Helper ===== */
+  #content-en { display: none; }
+  
+  /* LTR overrides for English mode */
+  .ltr-mode {
+    direction: ltr !important;
+    text-align: left !important;
+  }
+  .ltr-mode table.data-table {
+    text-align: left !important;
+  }
+
+  @media (max-width: 600px) {
+    .privacy-card { padding: 24px; }
+    header.nav-header { padding: 16px; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Background décor -->
+  <div class="orb o1"></div>
+  <div class="orb o2"></div>
+  <div class="orb o3"></div>
+  <div class="spark" style="top:18%; left:22%; animation-delay:0s"></div>
+  <div class="spark" style="top:12%; right:28%; animation-delay:1.2s"></div>
+  <div class="spark" style="top:38%; left:12%; animation-delay:2.1s"></div>
+  <div class="spark" style="top:30%; right:14%; animation-delay:.6s"></div>
+  <div class="spark" style="bottom:26%; left:30%; animation-delay:1.7s"></div>
+  <div class="spark" style="bottom:20%; right:24%; animation-delay:2.8s"></div>
+
+  <!-- Header -->
+  <header class="nav-header">
+    <a href="/" class="logo-link">
+      <svg class="crown-mini-logo" viewBox="0 0 240 170" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="goldGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%"  stop-color="#FDE68A"/>
+            <stop offset="45%" stop-color="#FACC15"/>
+            <stop offset="100%" stop-color="#B8860B"/>
+          </linearGradient>
+          <linearGradient id="bandGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%"   stop-color="#B8860B"/>
+            <stop offset="50%"  stop-color="#FACC15"/>
+            <stop offset="100%" stop-color="#B8860B"/>
+          </linearGradient>
+          <radialGradient id="gemPurple" cx="35%" cy="30%" r="80%">
+            <stop offset="0%" stop-color="#c4b5fd"/>
+            <stop offset="45%" stop-color="#7C3AED"/>
+            <stop offset="100%" stop-color="#4c1d95"/>
+          </radialGradient>
+        </defs>
+        <path d="M28 122 L14 48 L58 84 L92 30 L120 14 L148 30 L182 84 L226 48 L212 122 Z" fill="url(#goldGrad)" stroke="#8a6508" stroke-width="3" stroke-linejoin="round"/>
+        <circle cx="14"  cy="44" r="9"  fill="url(#goldGrad)"/>
+        <circle cx="226" cy="44" r="9"  fill="url(#goldGrad)"/>
+        <circle cx="120" cy="12" r="11" fill="url(#goldGrad)"/>
+        <path d="M120 62 L142 84 L120 112 L98 84 Z" fill="url(#gemPurple)"/>
+        <rect x="24" y="126" width="192" height="20" rx="10" fill="url(#bandGrad)" stroke="#8a6508" stroke-width="3"/>
+      </svg>
+      <span class="brand-name">YouVyron</span>
+    </a>
+    
+    <div class="lang-switcher">
+      <button class="lang-btn active" onclick="switchLang('ar')">العربية</button>
+      <button class="lang-btn" onclick="switchLang('en')">English</button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="content-container">
+    <div class="privacy-card">
+      
+      <!-- ==================== ARABIC VERSION ==================== -->
+      <div id="content-ar" lang="ar">
+        <div class="title-area">
+          <h1>سياسة الخصوصية والأمان</h1>
+          <div class="subtitle">لوحة مفاتيح يوفيرون الذكية (YouVyron Keyboard)</div>
+        </div>
+
+        <p class="intro-text">
+          إن خصوصيتك وحماية بياناتك هي أولويتنا الملكية القصوى. صُممت لوحة مفاتيح يوفيرون لتوفير تجربة ذكاء اصطناعي فاخرة وآمنة بالكامل. توضح هذه السياسة بشفافية تامة كيفية التعامل مع بياناتك والتحقق من التراخيص والصلاحيات، لنضمن لك تجربة كتابة لا تشوبها شائبة وبأعلى معايير الأمان.
+        </p>
+
+        <div class="section-group-title">
+          <span>🔒</span> مبادئ الخصوصية الأساسية
+        </div>
+
+        <div class="policy-section">
+          <div class="section-title">١. ما لا نفعله أبدًا</div>
+          <div class="section-body">
+            لوحة مفاتيح يوفيرون لا تخزّن ولا تلتقط ولا ترفع تلقائيًا النص الذي تكتبه. لا يوجد أي تسجيل للكتابة أو التجسس في الخلفية بأي شكل من الأشكال. تظل كتاباتك اليومية ملكًا لك وحدك.
+          </div>
+        </div>
+
+        <div class="policy-section">
+          <div class="section-title">٢. متى يعمل الذكاء الاصطناعي</div>
+          <div class="section-body">
+            يعمل الذكاء الاصطناعي فقط وحصريًا عندما تضغط بنفسك على زر إجراء محدد (مثل: تصحيح القواعد، إعادة صياغة، ترجمة، تأليف، أو أمر مخصص). يُرسَل النص الخاص بذلك الإجراء فقط إلى خوادمنا المؤمنة ليُعالَج بشكل عابر (مؤقت) في الذاكرة لتوليد النتيجة وعودتها إليك فورًا، دون حفظ النص الخام بشكل دائم في أي مكان.
+          </div>
+        </div>
+
+        <div class="policy-section">
+          <div class="section-title">٣. الحقول الحساسة محمية تلقائيًا</div>
+          <div class="section-body">
+            تتعرف لوحة المفاتيح تلقائيًا على حقول إدخال كلمات المرور، الأرقام السرية (PIN)، ورموز التحقق الثنائية (OTP) وتقوم بتعطيل شريط الذكاء الاصطناعي وكل ميزات الاقتراحات تمامًا. نصوص هذه الحقول لا تغادر جهازك أبدًا ولا يتم الاطلاع عليها.
+          </div>
+        </div>
+
+        <div class="policy-section">
+          <div class="section-title">٤. السجلات والخادم</div>
+          <div class="section-body">
+            لا تُسجَّل نصوص الإدخال أو مخرجات الذكاء الاصطناعي في سجلاتنا على الإطلاق. سجلات خادمنا المخصصة لحسابات الاستخدام تحتوي فقط على بيانات تقنية وعامة (مثل معرّفات الطلبات المشفرة، التوقيت، ورموز الحالة) لتتبع الحصص ومكافحة إساءة الاستخدام. كما تُستخدم بيانات الخادم للتحقق من التراخيص وتتبع الكريديت (الرصيد) الخاص بك.
+          </div>
+        </div>
+
+        <div class="section-group-title">
+          <span>🛂</span> شرح الأذونات والصلاحيات المطلوبة
+        </div>
+
+        <div class="policy-section">
+          <div class="section-title">الإنترنت (INTERNET)</div>
+          <div class="section-body">
+            مطلوب فقط لإرسال النصوص التي تختارها لتتم معالجتها بواسطة خوادم الذكاء الاصطناعي، وللتحقق من حالة ترخيصك (PRO/MAX)، ومزامنة رصيد الكريديت اليومي الخاص بك. عمليات الكتابة العادية والاقتراحات المحلية تعمل بشكل كامل دون اتصال بالإنترنت.
+          </div>
+        </div>
+
+        <div class="policy-section">
+          <div class="section-title">الاهتزاز (VIBRATE)</div>
+          <div class="section-body">
+            يُستخدم فقط لتقديم رد فعل اهتزازي (Haptic Feedback) اختياري عند نقر الأزرار. يمكنك تعطيله بالكامل من إعدادات التطبيق.
+          </div>
+        </div>
+
+        <div class="policy-section">
+          <div class="section-title">صلاحية لوحة المفاتيح وتحذير أندرويد القياسي</div>
+          <div class="section-body">
+            عند تفعيل أي لوحة مفاتيح خارجية، يعرض نظام أندرويد تحذيرًا أمنيًا قياسيًا يفيد بأن اللوحة قد تجمع كل النصوص بما فيها البيانات الشخصية. يظهر هذا التحذير لأي كيبورد خارجي. يوفيرون لا يستغل هذه الصلاحية لجمع أي شيء تلقائيًا، فالنص لا يرسل للخادم إلا بطلبك الصريح وعبر ضغطات أزرار الذكاء الاصطناعي.
+          </div>
+        </div>
+
+        <div class="section-group-title">
+          <span>📊</span> شفافية البيانات (ما نلتقطه فقط)
+        </div>
+
+        <div class="policy-section">
+          <div class="section-title">البيانات التي نجمعها وتفاصيلها</div>
+          <div class="section-body">
+            بناءً على سلوك التطبيق الفعلي، نعلن بوضوح عن البيانات التالية فقط:
+            <div class="data-table-wrapper">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>نوع البيانات</th>
+                    <th>مشاركتها مع أطراف ثالثة</th>
+                    <th>الغرض والاحتفاظ</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>معرّف الجهاز (ANDROID_ID)</td>
+                    <td>نعم (AdMob للمكافآت، Google Play)</td>
+                    <td>ربط رصيد الكريديت والترخيص بجهازك بشكل مجهول ودون ربطها بهويتك الحقيقية.</td>
+                  </tr>
+                  <tr>
+                    <td>نصوص طلبات الذكاء الاصطناعي</td>
+                    <td>لا</td>
+                    <td>تُرسَل فقط عبر بروتوكول HTTPS المشفر، وتُعالج transiently (مؤقتًا في الذاكرة) لتنفيذ الأمر ثم تُحذف فورًا.</td>
+                  </tr>
+                  <tr>
+                    <td>حالة التراخيص والمشتريات</td>
+                    <td>نعم (نظام دفع Google Play)</td>
+                    <td>مزامنة خطة اشتراكك (PRO أو MAX) والتحقق من فترات الصلاحية.</td>
+                  </tr>
+                  <tr>
+                    <td>معرّف الإعلانات (AD_ID)</td>
+                    <td>نعم (شبكة Google AdMob)</td>
+                    <td>تقديم إعلانات مكافأة تمكنك من كسب نقاط كريديت إضافية أو فتح ثيمات معينة مؤقتًا.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="policy-section">
+          <div class="section-title">٥. طلبات حذف البيانات</div>
+          <div class="section-body">
+            إذا كنت ترغب في حذف بيانات جهازك المجهول وسجلات الكريديت المرتبطة به نهائيًا من خوادمنا النشطة، يمكنك تواصل معنا في أي وقت عبر البريد الإلكتروني: <a href="mailto:mo.alamir52@gmail.com" style="color:var(--gold-bright);">mo.alamir52@gmail.com</a> مع تزويدنا بمعرف جهازك (المتوفر في شاشة الإعدادات/الحساب)، وسنقوم بتنفيذ طلبك بالكامل في غضون 30 يومًا.
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ==================== ENGLISH VERSION ==================== -->
+      <div id="content-en" lang="en">
+        <div class="title-area">
+          <h1>Privacy & Security Policy</h1>
+          <div class="subtitle">YouVyron Intelligent Keyboard</div>
+        </div>
+
+        <p class="intro-text">
+          Your privacy and the security of your data are our highest, royal priorities. YouVyron Keyboard is designed from the ground up to offer a premium, fully secure artificial intelligence typing experience. This policy transparently explains how your data, licenses, and permissions are managed to guarantee an impeccable, high-security experience.
+        </p>
+
+        <div class="section-group-title">
+          <span>🔒</span> Core Privacy Principles
+        </div>
+
+        <div class="policy-section">
+          <div class="section-title">1. What We Never Do</div>
+          <div class="section-body">
+            YouVyron Keyboard does NOT store, capture, or automatically upload any text you type. There is no background keylogging or data harvesting of any kind. Your everyday typing stays local and belongs exclusively to you.
+          </div>
+        </div>
+
+        <div class="policy-section">
+          <div class="section-title">2. When AI Runs</div>
+          <div class="section-body">
+            AI features run only and explicitly when you tap an AI command button (e.g. Fix Grammar, Rewrite, Translate, Compose, or a Custom Prompt). Only the specific text involved in that action is sent to our secure servers to be processed transiently (in-memory) to generate the response and return it to you immediately. Raw text is never permanently stored on our servers.
+          </div>
+        </div>
+
+        <div class="policy-section">
+          <div class="section-title">3. Protection of Sensitive Fields</div>
+          <div class="section-body">
+            The keyboard automatically detects secure fields (such as Password, PIN, and OTP input boxes) and disables the AI toolbar and suggestion engine entirely. Text typed in these fields never leaves your device and is never analyzed.
+          </div>
+        </div>
+
+        <div class="policy-section">
+          <div class="section-title">4. Server Logging & Backend</div>
+          <div class="section-body">
+            Input texts and AI generated outputs are never logged. Our server logs contain only technical metadata (such as encrypted request IDs, timestamps, and status codes) to track daily quotas and prevent API abuse. The backend stores your plan type, license state, and credit balance authoritatively.
+          </div>
+        </div>
+
+        <div class="section-group-title">
+          <span>🛂</span> Required Permissions Explained
+        </div>
+
+        <div class="policy-section">
+          <div class="section-title">INTERNET</div>
+          <div class="section-body">
+            Required only to transmit the specific text blocks you select to the AI servers for processing, validate your active license status (PRO/MAX), and sync your daily credit balance. Standard typing, layout switching, and local prediction work completely offline.
+          </div>
+        </div>
+
+        <div class="policy-section">
+          <div class="section-title">VIBRATE</div>
+          <div class="section-body">
+            Used only to provide optional haptic feedback when key presses occur. This can be fully disabled in the app settings.
+          </div>
+        </div>
+
+        <div class="policy-section">
+          <div class="section-title">Keyboard Access & Android Warning</div>
+          <div class="section-body">
+            When enabling any third-party input method, Android displays a standard system warning stating that the app may collect all text you type. This warning appears for all external keyboards. YouVyron does not use this permission to monitor you; text only leaves your device when you explicitly invoke an AI action.
+          </div>
+        </div>
+
+        <div class="section-group-title">
+          <span>📊</span> Data Safety Declarations (Actual Behavior)
+        </div>
+
+        <div class="policy-section">
+          <div class="section-title">Data Collection & Sharing Table</div>
+          <div class="section-body">
+            In accordance with actual app implementation, we transparently declare the following data practices:
+            <div class="data-table-wrapper">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Data Type</th>
+                    <th>Shared with Third Parties?</th>
+                    <th>Purpose and Retention</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Device Identifier (ANDROID_ID)</td>
+                    <td>Yes (Google AdMob, Google Play)</td>
+                    <td>Anonymously links your plan, licenses, and credit balance to your device without revealing your true identity.</td>
+                  </tr>
+                  <tr>
+                    <td>AI Text Prompts</td>
+                    <td>No</td>
+                    <td>Sent securely via HTTPS. Processed transiently in-memory on the backend and discarded immediately after generation.</td>
+                  </tr>
+                  <tr>
+                    <td>Purchase History / License Status</td>
+                    <td>Yes (Google Play Billing)</td>
+                    <td>Used to sync your premium subscriptions (PRO or MAX) and validate active durations.</td>
+                  </tr>
+                  <tr>
+                    <td>Advertising ID (AD_ID)</td>
+                    <td>Yes (Google AdMob Network)</td>
+                    <td>Serves rewarded ads allowing you to earn extra AI credits or unlock premium themes for 1 hour.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="policy-section">
+          <div class="section-title">5. Data Deletion Requests</div>
+          <div class="section-body">
+            If you wish to delete your anonymous account data, token, and associated credit ledger from our active database, you may contact us at: <a href="mailto:mo.alamir52@gmail.com" style="color:var(--gold-bright);">mo.alamir52@gmail.com</a>. Please provide your anonymous device ID (found in settings), and we will fulfill your request within 30 days.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <span class="crown-mini">👑</span> YouVyron © 2026 — Crafted to Rule the Software Universe
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    function switchLang(lang) {
+      const contentAr = document.getElementById('content-ar');
+      const contentEn = document.getElementById('content-en');
+      const buttons = document.querySelectorAll('.lang-btn');
+      
+      if (lang === 'ar') {
+        contentAr.style.display = 'block';
+        contentEn.style.display = 'none';
+        document.documentElement.dir = 'rtl';
+        document.documentElement.lang = 'ar';
+        document.body.classList.remove('ltr-mode');
+        document.querySelector('main.content-container').classList.remove('ltr-mode');
+        
+        buttons[0].classList.add('active');
+        buttons[1].classList.remove('active');
+      } else {
+        contentAr.style.display = 'none';
+        contentEn.style.display = 'block';
+        document.documentElement.dir = 'ltr';
+        document.documentElement.lang = 'en';
+        document.body.classList.add('ltr-mode');
+        document.querySelector('main.content-container').classList.add('ltr-mode');
+        
+        buttons[0].classList.remove('active');
+        buttons[1].classList.add('active');
+      }
+    }
+
+    // Default behavior is to match user browser preference if possible, fallback to Arabic
+    const userLanguage = navigator.language || navigator.userLanguage;
+    if (userLanguage.toLowerCase().startsWith('en')) {
+      switchLang('en');
+    } else {
+      switchLang('ar');
+    }
+  </script>
+</body>
+</html>
